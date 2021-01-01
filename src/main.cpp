@@ -131,11 +131,11 @@ int main()
           }
           if (too_close)
           {
-            ref_vel -= .224;
+            ref_vel -= 2.25 * .224;
           }
           else if (ref_vel < 49.5)
           {
-            ref_vel += .224;
+            ref_vel += 2.25 * .224;
           }
           vector<double> ptsx;
           vector<double> ptsy;

@@ -102,7 +102,7 @@ bool prepare_change(int lane, double car_s, vector<vector<double>> sensor_fusion
 
       double check_car_s = sensor_fusion[i][5];
 
-      if (abs(check_car_s - car_s) < 30)
+      if (abs(check_car_s - car_s) < 25)
       {
         ready = false;
         break;

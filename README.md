@@ -140,6 +140,101 @@ that's just a guess.
 One last note here: regardless of the IDE used, every submitted project must
 still be compilable with cmake and make./
 
-## How to write a README
-A well written README file can enhance your project and portfolio.  Develop your abilities to create professional README files by completing [this free course](https://www.udacity.com/course/writing-readmes--ud777).
+**Build a Path Planning Project**
+
+The goals / steps of this project are the following:
+* Load the Car data(pos,velocity,prev_path,...)
+* Explore the current lane for any close cars around. 
+* get the prev. path
+* predict the car position after few steps using anchor points
+* remap the pos to local frame 
+* Use spline to generate the path between the anchor points
+* back to the global frame
+
+
+## Rubric Points
+### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/1971/view) individually and describe how I addressed each point in my implementation.
+
+1- The car drives according to the speed limit:
+
+I have used a reference velocity =49.5 mile/h so the car increase untile It reaches that velocity.
+
+<img src="./images/max_speed.png" width="820" height="248" />
+
+As in the Image above, The car reaches nearly 49.5 in an open path.
+
+2- Max Acceleration and Jerk are not Exceeded:
+   
+I have increment and decriment the velocity gradually(ref_vel (-/+)= .224;).
+
+<img src="./images/start.png" width="820" height="248" />
+
+As you can see at the start, tha car with .21 MPH. 
+
+3- Car does not have collisions:
+
+Using sensor fusion I Explored the current lane for any close cars around.
+
+If I found one blocking the way:
+I will try to change lane and If I couldn't I will decrease the velocity.
+
+4-The car stays in its lane, except for the time between changing lanes:
+
+I have used ferent coordinates (d,s) too keep te car in lane.
+ 
+5-The car is able to change lanes:
+
+If I found a car blocking the way, I started to explore the nearby lanes to try finding a gap.
+
+If I found the gap , the car change the trajectory for the new lane.
+
+<img src="./images/change lane.png" width="820" height="248" />
+
+6-The car is able to drive at least 4.32 miles without incident:
+
+<img src="./images/final.png" width="820" height="248" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
